@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeFirst">
+        <item name="backgroundColorTop">@color/theme_one_main</item>
+    </style>
+
+    <style name="ThemeSecond">
+        <item name="backgroundColorTop">@color/theme_two_main</item>
+    </style>
+
+    <style name="ThemeThird">
+        <item name="backgroundColorTop">@color/theme_three_main</item>
+    </style>
+
+    <style name="ThemeFourth">
+        <item name="backgroundColorTop">@color/theme_four_main</item>
+    </style>
+
+    <style name="ThemeFifth">
+        <item name="backgroundColorTop">@color/theme_five_main</item>
+    </style>
+
+    <style name="ThemeSixth">
+        <item name="backgroundColorTop">@color/theme_six_main</item>
+    </style>
+
+</resources>

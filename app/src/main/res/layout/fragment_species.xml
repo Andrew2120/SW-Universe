@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="species"
+            type="com.andrew.starwars.domain.model.SpeciesModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        app:layoutDescription="@xml/fragment_person_xml_constraintlayout3_scene"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.person.PersonFragment">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/personBackgroundColor"
+            android:layout_width="match_parent"
+            android:background="@drawable/space_wall_paper"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="@dimen/_80sdp"
+            app:src="@{species.image}"
+            android:layout_height="@dimen/_80sdp"
+
+            android:layout_marginTop="@dimen/_32sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/personBackgroundColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personBackgroundColor" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@{species.name}"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewDesignation"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/person_protection_security_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/DesignationTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/designation"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewDesignation"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/birthYearValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.designation}"
+
+                        app:layout_constraintStart_toStartOf="@+id/DesignationTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/DesignationTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewEyeColor"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/eye_open_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/eyeColorTitle"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/eye_color"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewEyeColor"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/eyeColorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.eyeColors}"
+
+                        app:layout_constraintStart_toStartOf="@+id/eyeColorTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/eyeColorTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewLanguage"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/language_alt_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/genderLanguage"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/language"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewLanguage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genderValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.language}"
+
+                        app:layout_constraintStart_toStartOf="@+id/genderLanguage"
+                        app:layout_constraintTop_toBottomOf="@+id/genderLanguage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewHairColor"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/hair_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/hairColorTitle"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/hair_color"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewHairColor"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/hairColorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.hairColors}"
+
+                        app:layout_constraintStart_toStartOf="@+id/hairColorTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/hairColorTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewHeight"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/size_height_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/heightTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/avg_height"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewHeight"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/heightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.averageHeight}"
+
+                        app:layout_constraintStart_toStartOf="@+id/heightTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/heightTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewLifeSpan"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/loading_part_2_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/lifeSpanTitle"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/avg_life_span"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewLifeSpan"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/massValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.averageLifespan}"
+
+                        app:layout_constraintStart_toStartOf="@+id/lifeSpanTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/lifeSpanTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    tools:layout_editor_absoluteX="0dp">
+
+
+                    <ImageView
+
+                        android:id="@+id/imageViewClassification"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/plant_flower_svgrepo_com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/ClassificationTitle"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/classification"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewClassification"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/skinColorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{species.classification}"
+
+                        app:layout_constraintStart_toStartOf="@+id/ClassificationTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/ClassificationTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

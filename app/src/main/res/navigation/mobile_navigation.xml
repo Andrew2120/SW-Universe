@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.andrew.starwars.presentation.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_personFragment"
+            app:destination="@id/personFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_home_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_planetFragment"
+            app:destination="@id/planetFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_speciesFragment"
+            app:destination="@id/speciesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.andrew.starwars.presentation.ui.search.SearchFragment"
+
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_personFragment"
+            app:destination="@id/personFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_planetFragment"
+            app:destination="@id/planetFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_speciesFragment"
+            app:destination="@id/speciesFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+
+        android:name="com.andrew.starwars.presentation.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_themeCustomizationFragment"
+            app:destination="@id/themeCustomizationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/themeCustomizationFragment"
+        android:name="com.andrew.starwars.presentation.ui.profile.theme_customization.ThemeCustomizationFragment"
+        android:label="ThemeCustomizationFragment"
+        tools:layout="@layout/fragment_theme_customization">
+        <action
+            android:id="@+id/action_themeCustomizationFragment_to_settingsFragment"
+            app:destination="@id/navigation_profile"
+            app:popUpTo="@id/navigation_profile"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.andrew.starwars.presentation.ui.person.PersonFragment"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" >
+        <argument
+            android:name="person"
+            app:argType="com.andrew.starwars.domain.model.PersonModel" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_movie_view"
+        android:id="@+id/movieFragment"
+        android:name="com.andrew.starwars.presentation.ui.movie.MovieFragment"
+        android:label="MovieFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.andrew.starwars.domain.model.MovieModel" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_planet"
+        android:id="@+id/planetFragment"
+        android:name="com.andrew.starwars.presentation.ui.planet.PlanetFragment"
+        android:label="PlanetFragment" >
+        <argument
+            android:name="planet"
+            app:argType="com.andrew.starwars.domain.model.PlanetModel" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_species"
+        android:id="@+id/speciesFragment"
+        android:name="com.andrew.starwars.presentation.ui.species.SpeciesFragment"
+        android:label="SpeciesFragment" >
+        <argument
+            android:name="species"
+            app:argType="com.andrew.starwars.domain.model.SpeciesModel" />
+    </fragment>
+</navigation>

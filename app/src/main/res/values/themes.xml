@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/theme_two_main</item>
+        <item name="colorPrimaryVariant">@color/theme_two_secondary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/dark_gray</item>
+        <!-- Customize your theme here. -->
+
+        <item name="fontFamily">@font/font</item>
+        <item name="android:fontFamily">@font/font</item>
+
+    </style>
+
+
+    <style name="Widget.Material3.BottomNavigationView.ActiveIndicator" parent="">
+
+        <item name="shapeAppearance">
+            @style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator
+        </item>
+        <item name="android:color">?attr/backgroundColorTop</item>
+    </style>
+</resources>
