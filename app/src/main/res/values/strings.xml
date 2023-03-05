@@ -1,7 +1,4 @@
 <resources>
-    <string name="facebook_app_id">518309340447490</string>
-    <string name="fb_login_protocol_scheme">fb518309340447490</string>
-    <string name="facebook_client_token">de4be74252799b26577834b856783518</string>
 
     <string name="app_name">SW Universe</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
